@@ -1,0 +1,33 @@
+<%- include('templates/head.html') %>
+
+<%- include('templates/navbar.html') %>
+
+<div style="margin-top: 50px;"></div>
+<h1 class="display-3">Users List</h1>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Username</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% for(let i = 0; i<users.length; i++) { 
+            let user = users[i];
+            %>
+      <tr>
+        <th scope="row"><%= user.userName %></th>
+        <td><%= user.firstName %></td>
+        <td><%= user.lastName %></td>
+        <td><%= user.address %></td>
+        <td><%= user.phone %></td>
+      </tr>
+      <% } %>
+     
+    </tbody>
+  </table>

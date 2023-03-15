@@ -1,0 +1,36 @@
+<%- include('templates/head.html') %>
+
+<%- include('templates/navbar.html') %>
+
+<% for(let i=0; i<dat.length; i++){ %>
+
+    <ul>
+       <li> <%= dat[i].name %> </li>
+        <ul>
+        <% for(let ele = 0; ele <dat[i].courses.length; ele++){ %>
+            <li><%= dat[i].courses[ele] %></li>
+
+       <% } %>
+        </ul>
+    </ul>
+
+
+
+<% } %>
+
+<form action="">
+    <% for (let ele in formDat){  %>
+        <label for=""><%= ele %></label>
+        <% if (typeof formDat[ele] =='object') { %>
+         <select name="" id="">
+            <% for (let index of formDat[ele].list) { 
+                 const element = index;
+                 %>
+               
+               <option value="<%= element %>"><%= element %></option> 
+           <% } %>
+         </select>   
+       <% }else{ %>
+        <input type="text" value="<%= formDat[ele] %>">
+        <% }} %>
+       
